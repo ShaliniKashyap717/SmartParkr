@@ -56,4 +56,41 @@ Urban parking demands fluctuate based on traffic, vehicle type, and time of day.
 
 ---
 
+## Architecture Diagram
+```mermaid
+%%{ init : { "theme": "default", "themeVariables": { 
+    "fontSize": "12px", 
+    "primaryColor": "#eef", 
+    "primaryTextColor": "#000", 
+    "lineColor": "#333", 
+    "fontFamily": "Inter" 
+}} }%%
 
+flowchart TD
+    A["Real-Time Data<br/>Ingestion (CSV/Stream)"] --> B["Pathway<br/>Stream Engine"]
+
+    subgraph MODELS [Pricing Models]
+        M1["Model 1:<br/>Baseline Linear"]
+        M2["Model 2:<br/>Demand-Based"]
+    end
+
+    B --> C["Preprocessing<br/>& Filtering"]
+    C --> D["Feature<br/>Computation"]
+    D --> M1
+    D --> M2
+
+    M1 --> E1["Output:<br/>Model 1 Prices"]
+    M2 --> E2["Output:<br/>Model 2 Prices"]
+
+    subgraph VIS [Visualization]
+        V1["Bokeh Plot:<br/>Model 1"]
+        V2["Bokeh Plot:<br/>Model 2"]
+    end
+
+    E1 --> V1
+    E2 --> V2
+
+    %% Uniform styling
+    classDef box fill:#fdf,stroke:#333,color:#000;
+    class A,B,C,D,M1,M2,E1,E2,V1,V2 box;
+```
