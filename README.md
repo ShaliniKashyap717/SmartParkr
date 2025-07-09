@@ -48,7 +48,6 @@ Urban parking demands fluctuate based on traffic, vehicle type, and time of day.
 4. **Real-Time Streaming (Pathway)**:
    - Using `pw.demo.replay_csv()` to simulate streaming
    - Pathway schemas define column types and structure
-   - Models are applied as user-defined functions (`@pw.udf`) to compute price in real time
 
 5. **Bokeh Visualization**:
    ![Visualisation](https://drive.google.com/uc?export=view&id=1iQDslil7VL6_rMaHhyaZzzbY3JG3r9ho)
