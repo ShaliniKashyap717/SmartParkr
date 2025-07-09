@@ -51,10 +51,12 @@ Urban parking demands fluctuate based on traffic, vehicle type, and time of day.
    - Models are applied as user-defined functions (`@pw.udf`) to compute price in real time
 
 5. **Bokeh Visualization**:
+   ![Visualisation](https://drive.google.com/uc?export=view&id=1iQDslil7VL6_rMaHhyaZzzbY3JG3r9ho)
    - Line plots show `PriceModel1` vs `PriceModel2` over time
    - Real-time output is rendered via `pn.Column().servable()` using Pathway’s built-in plotting interface
 
 ---
+
 
 ## Architecture Diagram
 ```mermaid
